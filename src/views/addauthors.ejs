@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Add Books</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/newstyles.css" rel="stylesheet">
+
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/newstyle.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+          
+        <li>
+          <a href="/books">Books</a>
+        </li>
+       
+        <li>
+          <a href="/authors">AUTHORS</a>
+        </li>
+       
+      </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+
+  <div class="main-w3layouts wrapper">
+		<h1 style="text-align: center;">Add Author</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="<%=link%>" method="get" onsubmit="return bookValidate();">
+					
+					<input class="text email" type="text" name="author" id="author" placeholder="Enter Author Name" required="">
+                    <input class="text" type="text" name="Username" id= "bookname" placeholder="Enter Book Name" required="">
+					<input class="text" type="text"  id="genre" name="password" placeholder="Enter Genre" required="">
+                   
+                   <label style="margin-top:25px;color:black;">Upload author image:</label> 
+                   <input class="text" type="file" id="bookFile" name="file" required="" >
+                   
+					<input type="submit" value="ADD AUTHOR">
+				</form>
+				<!-- <p>Already have an Account? <a href="/login"> Login Now!</a></p> -->
+			</div>
+		</div>
+	
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+                                                
+                                                                                
+
+
+
+
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/validate.js"></script>
+
+	</body>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <h1>Follow Us</h1>
+              <ul class="list-inline">
+                <li><i class="icon-facebook icon-2x"></i></li>
+                <li><i class="icon-twitter icon-2x"></i></li>
+                <li><i class="icon-google-plus icon-2x"></i></li>
+                <li><i class="icon-pinterest icon-2x"></i></li>
+              </ul>
+              
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+</html>

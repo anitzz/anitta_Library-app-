@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial_scale=1, shrink-to-fit=no">
+	  <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body class="bb">
+  <main class="container my-5">
+    <centre>
+      <div class="row">
+        <section class="col-md-6 my-5 offset-md-3">
+    
+          <div class="card shadow p-5">
+            <form action="<%=link%>">
+    
+              <h3 class="text-center text-uppercase mb-4">Sign Up</h3>
+              <hr>
+              <div class="row mb-3">
+                <label for="number" class="col-sm-2 col-form-label"><b>Name</b></label>
+                <div class="col-sm-10">
+                  <input type="name" id="name" required  class="form-control"> 
+                </div>
+              </div>
+  <br>
+    <div class="row mb-3">
+    <label for="number" class="col-sm-2 col-form-label"><b>Mobile Number</b></label>
+    <div class="col-sm-10">
+      <input type="tel" id="phone" required  class="form-control" name="phone" pattern="([0-9]{10})" title="Numbers Only and must contain only 10 numbers">
+    </div>
+  </div>
+  <br>
+  <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><b>Email</b></label>
+    <div class="col-sm-10">
+      <input type="email"  placeholder="Email" required class="form-control"></span>
+        
+    </div>
+  </div>
+  <br>
+  <div class="row mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label"><b>Password</b></label>
+    <div class="col-sm-10">
+      <input type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required class="form-control" id="inputPassword3" onkeyup="CheckPasswordStrength(this.value);"><span id="password_strength"></span>
+        
+    </div>
+  </div>
+  <br>
+  <div class="row mb-3">
+    <label class="col-form-label col-sm-2 pt-0">Gender</label>
+    <div class="col-sm-5">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+        <label class="form-check-label" for="gridRadios1">
+         Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+        <label class="form-check-label" for="gridRadios2">
+         Female
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+        <label class="form-check-label" for="gridRadios2">
+      Other
+        </label>
+      </div>
+    </div>
+  </div>
+  <br>
+  <button class="btn btn-block btn-secondary rounded-pill mt-3">Sign Up</button>
+    <p>Already have an account?&nbsp;<a href="/login">Login</a></p>
+</form>
+
+</div>
+</div>
+
+</centre>
+</main>
+<style>
+   main .card {
+    
+            background-color:rgb(211, 211, 241);
+  border-radius: 20px;
+  padding: 10px;
+  
+ 
+}
+
+  body {
+    background-image: url("/images/36f0949c623b61a235fd6645fa507236.jpg");
+    padding-top: 5%;;
+   padding-left: 23%;
+  
+  color:black;
+  }
+  h3 {
+  font-family: Times New Roman;
+  font-weight: bold;
+}
+hr {
+  border-bottom: solid    rgba(17, 67, 114, 0.479);
+}
+
+.btn {
+  background:   rgba(17, 67, 114, 0.479); /* fallback for old browsers */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+input {
+    padding-left: 20%;
+  background-color: rgba(17, 67, 114, 0.329) !important;
+  color: white !important;
+}
+
+::placeholder {
+  color: white !important;
+}
+
+     
+</style>
+    </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    function CheckPasswordStrength(password) {
+        var password_strength = document.getElementById("password_strength");
+ 
+        //TextBox left blank.
+        if (password.length == 0) {
+            password_strength.innerHTML = "";
+            return;
+        }
+ 
+        //Regular Expressions.
+        var regex = new Array();
+        regex.push("[A-Z]"); //Uppercase Alphabet.
+        regex.push("[a-z]"); //Lowercase Alphabet.
+        regex.push("[0-9]"); //Digit.
+        regex.push("[$@$!%*#?&]"); //Special Character.
+ 
+        var passed = 0;
+ 
+        //Validate for each Regular Expression.
+        for (var i = 0; i < regex.length; i++) {
+            if (new RegExp(regex[i]).test(password)) {
+                passed++;
+            }
+        }
+		if (passed > 2 && password.length > 8) {
+            passed++;
+        }
+ 
+        //Display status.
+        var color = "";
+        var strength = "";
+        switch (passed) {
+            case 0:
+            case 1:
+                strength = "Weak";
+                color = "red";
+                break;
+            case 2:
+                strength = "Good";
+                color = "darkorange";
+                break;
+            case 3:
+            case 4:
+                strength = "Strong";
+                color = "green";
+                break;
+            case 5:
+                strength = "Very Strong";
+                color = "darkgreen";
+                break;
+        }
+		password_strength.innerHTML = strength;
+        password_strength.style.color = color;
+    }
+	function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+</script>
+
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="list-inline">
+            <li><i class="icon-facebook icon-2x"></i></li>
+            <li><i class="icon-twitter icon-2x"></i></li>
+            <li><i class="icon-google-plus icon-2x"></i></li>
+            <li><i class="icon-pinterest icon-2x"></i></li>
+          </ul>
+          
+        </div>
+       
+      </div>
+    </div>
+  </footer>
+        
+</html>
